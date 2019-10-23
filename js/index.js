@@ -109,7 +109,6 @@ const Model = (function() {
                 const coords = res.data.results[0].locations[0].latLng;
                 return coords;
             } catch(err) {
-                console.log(err);
                 clearWeatherData();
                 return {
                     errMsg: 'Unable to find your results.<br>Please try again with a UK place name or try the "Use my location" button'
@@ -126,11 +125,9 @@ const Model = (function() {
         getPlaceNameFromCoords: async function(coords) {
             try {
                 const res = await axios(`https://cors-anywhere.herokuapp.com/https://www.mapquestapi.com/geocoding/v1/reverse?key=${geoCodeKey}&location=${coords.lat},${coords.lng}`);
-                console.log(res);
                 weatherData.current.location = res.data.results[0].locations[0].adminArea5;
             }
             catch(err) {
-                console.log(err);
                 return err;
             }
         },
@@ -142,7 +139,6 @@ const Model = (function() {
                 populateWeatherData(res);
                 return weatherData;
             } catch(err) {
-                console.log(err);
                 clearWeatherData();
                 return {
                     errMsg: 'Unable to find your results.<br>Please try again with a UK place name or alter your query'
@@ -393,7 +389,6 @@ const AppController = (function(Model, UI) {
             
         }
         catch (err) {
-            console.log(err);
             UI.displayErrMsg('Unable to find your location.<br>Please use the search field above');
         }
 
