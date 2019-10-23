@@ -1,0 +1,249 @@
+.results__container {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;
+    min-height: stretch;
+    display: none;
+}
+
+.results {
+    &__bg {
+        &-image {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 0;
+            object-fit: cover;
+        }
+
+        &-overlay {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .35);
+            position: fixed;
+            top: 0;
+            z-index: 0;
+        }
+    }
+
+    &__container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        top: 0;
+        left: 0;
+
+        @include respond(mob-l) {
+            padding-top: 4rem;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+
+        @include respond(tab-land) {
+            max-width: 60rem;
+            margin: 0 auto;
+        }
+    }
+
+    // *** RESULTS CURRENT *** //
+    &__current {
+        height: 47%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        padding-top: 1rem;
+
+        @include respond(tab-port) {
+            height: 42%;   
+
+            &__info {
+                margin-right: 2rem;
+            }
+        }
+        
+        @include respond(tab-land) {
+            flex-direction: row;
+            padding-top: 5rem;
+        }
+
+        
+
+        &__location {
+            font-size: 4.1rem;
+            font-weight: 300;
+
+            @include respond(tab-port) {
+                font-size: 6rem;
+            }
+
+            @include respond(tab-land) {
+                font-size: 7rem;
+                text-align: left;
+            }
+        }
+
+        &__state {
+            margin-top: 1rem;
+            font-size: 2.1rem;
+            color: $color-gray-light;
+            
+            @include respond(tab-land) {
+                font-size: 4rem;
+                font-weight: 300;
+                text-align: left;
+                margin: 0 0 0 4px;
+            }
+        }
+
+        &__temp {
+            @include respond(tab-land) {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            
+            &--temp {
+                font-size: 11rem;
+                font-weight: 300;
+                margin: 3rem 0 0 1.4rem;
+
+                @include respond(tab-land) {
+                    line-height: 12.5rem;
+                    margin: 0;
+                }
+            }
+        }
+
+        &__range {
+            font-size: 2.4rem;
+            display: flex;
+            justify-content: center;
+            margin-top: -1rem;
+
+            @include respond(lap) {
+                margin-top: 0;
+            }
+        }
+
+        &__hi,
+        &__lo {
+            display: flex;
+            align-items: center;
+        }
+
+        &__lo {
+            margin-left: 2rem;
+        }
+    }
+
+    &__week {
+        width: 92%;
+        max-width: 38rem;
+        margin: 7rem auto 0;
+        display: flex;
+        justify-content: space-between;
+
+        @include respond(mob-l) {
+            margin-top: 11rem;
+        }
+
+        @include respond(tab-port) {
+            max-width: 44rem;
+            margin-top: 16rem;
+        }
+
+        @include respond(tab-land) {
+            margin: 7rem auto 0;
+            width: 80%;
+            max-width: 80%;
+        }
+    }
+
+    &__reset {
+        padding-bottom: 3rem;
+        position: fixed;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (hover: hover) {
+            &:hover {
+                cursor: pointer;
+                color: $color-gray-light;
+            }
+        }
+
+        @include respond(tab-port) {
+            padding-bottom: 5rem;   
+        }
+
+        &__icon {
+            font-size: 2.5rem;
+            margin-right: 1.8rem;
+            margin-left: -3rem;
+        }
+
+        &__text {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+    }
+}
+
+// *** RESULTS WEEK *** //
+.week {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $color-gray-light;
+    }
+
+    &__day {
+        font-size: 1.8rem;
+
+        @include respond(tab-port) {
+            font-size: 2.2rem;   
+        }
+    }
+
+    &__icon {
+        font-size: 2.4rem;
+        margin: 1.3rem 0;
+
+        @include respond(tab-port) {
+            font-size: 3rem;
+        }
+    }
+
+    &__temp {
+        font-size: 2.4rem;
+        margin-left: .8rem;
+        margin-bottom: 4px;
+
+        @include respond(tab-port) {
+            font-size: 2.8rem;
+        }
+    }
+
+    &__range {
+        font-size: 1.6rem;
+        display: flex;
+
+        @include respond(tab-port) {
+            font-size: 1.8rem;
+        }
+    }
+}

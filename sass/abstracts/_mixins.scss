@@ -1,0 +1,46 @@
+@mixin abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == mob-l {
+        @media only screen and (min-width: 26.56em) { @content; } // 425px
+    }
+    @if $breakpoint == mob-l-land {
+        @media only screen and (min-width: 26.56em) and (orientation: landscape) { @content; } // 425px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (min-width: 48em) { @content; } // 768px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (min-width: 48em) and (orientation: landscape) { @content; }
+    }
+    @if $breakpoint == lap {
+        @media only screen and (min-width: 65em) { @content; }    // 1024px
+    }
+
+
+
+    /*** SPEFIC CONDITIONS ***/
+    @if $breakpoint == ipad-pro-port {
+        @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait)  { @content; }
+    }
+
+    @if $breakpoint == ipad-pro-land {
+        @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: landscape)  { @content; }
+    }
+}
+
+
+
+/*
+To Test:
+
+-Smallest phone
+-iPhone X+
+-iPad Pro
+
+*/

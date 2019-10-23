@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d1ebd23f86.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>UK Weather</title>
+</head>
+<body>
+    <!--***** SEARCH *****-->
+    <div class="search__container display show">
+        <h1 class="heading-primary">UK Weather</h1>
+
+        <div class="search display show">
+            <div class="search__content">
+                <form class="search__form" action="#">
+                    <input type="text" class="search__form__input" id="auto-search" placeholder="Search by location" required>
+                    <input type="submit" class="btn btn--black search__form__btn" value="Search">
+                </form>
+    
+                <div class="search__or">
+                    <div class="search__or__line"></div>
+                    <span class="search__or__text">or</span>
+                    <div class="search__or__line"></div>
+                </div>
+                
+                <div class="btn btn--black search__location__btn">Use my location</div>
+            </div>
+        </div>
+    
+        <div class="loader">
+            <div class="loader__text">Fetching your weather...</div>
+            <div class="loader__icon">
+                <div class="loader__dot"></div>
+                <div class="loader__dot"></div>
+                <div class="loader__dot"></div>
+            </div>
+        </div>
+        
+    </div>
+    
+
+    <!--****** RESULTS ******-->
+    <div class="results__container">
+        <img srcset="""
+             alt="Current Weather" class="results__bg-image"
+             src="">
+        <div class="results__bg-overlay"></div>
+
+        <div class="results__content">
+            <!--*** TODAYS RESULTS ***-->
+            <div class="results__current">
+            
+                <div class="results__current__info">
+                    <div class="results__current__location"></div>
+                    <div class="results__current__state"></div>
+                </div>
+
+                <div class="results__current__temp">
+                    <div class="results__current__temp--temp"></div>
+                        
+                    <div class="results__current__range">
+                        <div class="results__current__hi"><i class="fas fa-arrow-up arrow"></i><div class="results__current__hi__content"></div></div>
+                        <div class="results__current__lo"><i class="fas fa-arrow-down arrow"></i><div class="results__current__lo__content"></div></div>
+                    </div>
+                </div>
+
+            </div>
+        
+
+            <!--*** WEEK RESULTS ***-->
+            <div class="results__week">
+
+                <div class="week__item">
+                    <div class="week__day"></div>
+                    <div class="week__icon"></div>
+                    <div class="week__temp"></div>
+                    <div class="week__range">
+                        <div class="week__range__hi"></div>
+                        <div class="week__range__lo"></div>
+                    </div>
+                </div>
+
+                <div class="week__item">
+                    <div class="week__day"></div>
+                    <div class="week__icon"></div>
+                    <div class="week__temp"></div>
+                    <div class="week__range">
+                        <div class="week__range__hi"></div>
+                        <div class="week__range__lo"></div>
+                    </div>
+                </div>
+
+                <div class="week__item">
+                    <div class="week__day"></div>
+                    <div class="week__icon"></div>
+                    <div class="week__temp"></div>
+                    <div class="week__range">
+                        <div class="week__range__hi"></div>
+                        <div class="week__range__lo"></div>
+                    </div>
+                </div>
+
+                <div class="week__item">
+                    <div class="week__day"></div>
+                    <div class="week__icon"></div>
+                    <div class="week__temp"></div>
+                    <div class="week__range">
+                        <div class="week__range__hi"></div>
+                        <div class="week__range__lo"></div>
+                    </div>
+                </div>
+
+                <div class="week__item">
+                    <div class="week__day"></div>
+                    <div class="week__icon"></div>
+                    <div class="week__temp"></div>
+                    <div class="week__range">
+                        <div class="week__range__hi"></div>
+                        <div class="week__range__lo"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results__reset">
+            <i class="results__reset__icon fas fa-arrow-left"></i>
+            <span class="results__reset__text">Search Again</span>
+        </div>
+    </div>
+
+    <div class="err">
+        <div class="err__underlay"></div>
+        <div class="err__content">
+            <div class="err__msg"></div>
+            <button class="err__btn btn btn--black">Ok</button>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
+
+<!--
+FA ICONS:
+clear-day:   <i class="fas fa-sun"></i>
+cloud-light: <i class="fas fa-cloud-sun"></i>
+cloud-heavy: <i class="fas fa-cloud"></i>
+fog:         <i class="fas fa-smog"></i>
+rain:        <i class="fas fa-cloud-rain"></i>
+snow:        <i class="far fa-snowflake"></i>
+storm:       <i class="fas fa-bolt"></i>
+wind:        <i class="fas fa-wind"></i>
+-->
+
+<!--
+    GLOBAL TO DO -
+    Add medium size pictures for all backgrounds
+-->

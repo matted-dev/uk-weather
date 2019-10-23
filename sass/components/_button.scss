@@ -1,0 +1,20 @@
+.btn {
+    border-radius: 3px;
+    padding: 1.2rem 4rem;
+    text-align: center;
+    transition: background-color .2s;
+    font-weight: 600;
+    outline: none;
+
+    &--black {
+        background-color: $color-black;
+        color: $color-white;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            cursor: pointer;
+            background-color: $color-gray-dark;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.loader {
+    @include abs-center;
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    transition: opacity .4s;
+    opacity: 0;
+    display: none;
+
+    &__text {
+        margin-bottom: 2rem;
+    }
+
+    &__icon {
+        width: 9.3rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__dot {
+        width: 2rem;
+        height: 2rem;
+        background-color: $color-white;
+        border-radius: 50%;
+        animation: grow 1s ease-in-out infinite alternate;
+        transform-origin: 100% 50%;
+
+        &:nth-child(2) {
+            animation-delay: .33s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: .66s;
+        }
+    }
+}
+
+@keyframes grow {
+    to {
+      transform: translateX(-50%) scale(0);
+    }
+}
+
+@-webkit-keyframes grow {
+    to {
+      transform: translateX(-50%) scale(0);
+    }
+}
