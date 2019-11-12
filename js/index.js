@@ -1,8 +1,8 @@
 const Model = (function() {
     // *** AUTO-COMPLETE CONFIG *** //
     const placesAutocomplete = places({
-        appId: 'plEYFZZNKHLW',
-        apiKey: '4fc948f8443871c64615320003712e92',
+        appId: 'Paster your Algolia App ID here',
+        apiKey: 'Paste your Algolia API key here',
         countries: ['gb'],
         type: 'city',
         hitsPerPage: 6,
@@ -11,8 +11,8 @@ const Model = (function() {
     // **************************** //
 
     // *** API KEYS *** //
-    const geoCodeKey = 'PT085ktX6IUkWLb7OKLngGvyzQNOOCuL';
-    const weatherKey = '9cd8b63b5bc63273455248a007e0f571';
+    const geoCodeKey = 'Paste your MapQuest API key here';
+    const weatherKey = 'Paste your DarkSky API key here';
     // **************************** //
 
 
