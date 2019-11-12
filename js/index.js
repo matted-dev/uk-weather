@@ -1,8 +1,8 @@
 const Model = (function() {
     // *** AUTO-COMPLETE CONFIG *** //
     const placesAutocomplete = places({
-        appId: 'get you API Key from - https://community.algolia.com/places/pricing.html',
-        apiKey: 'get you API Key from - https://community.algolia.com/places/pricing.html',
+        appId: 'plEYFZZNKHLW',
+        apiKey: '4fc948f8443871c64615320003712e92',
         countries: ['gb'],
         type: 'city',
         hitsPerPage: 6,
@@ -11,13 +11,13 @@ const Model = (function() {
     // **************************** //
 
     // *** API KEYS *** //
-    const geoCodeKey = 'get your API Key from - https://developer.mapquest.com/';
-    const weatherKey = 'get your API Key from - https://darksky.net/dev';
+    const geoCodeKey = 'PT085ktX6IUkWLb7OKLngGvyzQNOOCuL';
+    const weatherKey = '9cd8b63b5bc63273455248a007e0f571';
     // **************************** //
 
 
     const weatherData = {
-        current: {}
+        current: {},
         week: []
     };
 
@@ -109,6 +109,7 @@ const Model = (function() {
                 const coords = res.data.results[0].locations[0].latLng;
                 return coords;
             } catch(err) {
+                
                 clearWeatherData();
                 return {
                     errMsg: 'Unable to find your results.<br>Please try again with a UK place name or try the "Use my location" button'
@@ -139,6 +140,7 @@ const Model = (function() {
                 populateWeatherData(res);
                 return weatherData;
             } catch(err) {
+                
                 clearWeatherData();
                 return {
                     errMsg: 'Unable to find your results.<br>Please try again with a UK place name or alter your query'
@@ -412,7 +414,7 @@ const AppController = (function(Model, UI) {
             }
 
         } catch (err) {
-            console.log(err);
+            UI.displayErrMsg('Unable to fetch you weather.<br>Please try again');
         }
 
     }
